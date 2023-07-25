@@ -24,3 +24,7 @@ c = (
 )
 
 st.write(c)
+
+st.header("깃 테스트")
+st.subheader("깃 테스트")
+st.write("깃 테스트")
