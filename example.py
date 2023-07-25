@@ -2,6 +2,7 @@ import streamlit as st
 import altair as alt
 import numpy as np
 import pandas as pd
+from datetime import time, datetime
 
 st.header("Demo")
 
@@ -28,3 +29,28 @@ st.write(c)
 st.header("깃 테스트")
 st.subheader("깃 테스트")
 st.write("깃 테스트")
+
+age = st.slider("너 몇 살이니", 0, 130, 25)
+st.write("나는", age, "살이야.")
+
+values = st.slider("레인지 선택", 0.0, 100.0, (25.0, 75.0))
+st.write("값:", values)
+
+appointment = st.slider("계획", value=(time(11, 30), time(12, 45)))
+st.write("계획된 시간 : ", appointment)
+
+start_time = st.slider(
+    "시작시간?", value=datetime(2020, 1, 1, 9, 30), format="MM/DD/YY - hh:mm"
+)
+st.write(f"시작시간 : {start_time}")
+
+st.header("라인차트")
+
+chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+st.line_chart(chart_data)
+
+st.header("선택박스")
+
+option = st.selectbox("좋아하는 색상은?", ("파랑", "빨강", "초록"))
+
+st.write("너의 색상은", option)
