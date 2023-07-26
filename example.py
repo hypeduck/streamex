@@ -54,3 +54,21 @@ st.header("선택박스")
 option = st.selectbox("좋아하는 색상은?", ("파랑", "빨강", "초록"))
 
 st.write("너의 색상은", option)
+
+st.header("멀티 선택")
+optiions = st.multiselect("좋아하는 색상들은?", ["초록", "노랑", "빨강"], ["노랑", "빨강"])
+
+st.write(f"선택 색상들 : {optiions}")
+
+st.header("체크박스")
+
+icecream = st.checkbox("아이스크림")
+coffee = st.checkbox("커피")
+cola = st.checkbox("콜라")
+
+if icecream:
+    st.write("수박바")
+if coffee:
+    st.write("스타벅스")
+if cola:
+    st.write("코카콜라")
